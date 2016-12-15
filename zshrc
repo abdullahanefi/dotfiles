@@ -7,7 +7,7 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 
 # Add ruby version on prompt (float right)
-RPS1='[$(ruby_prompt_info)]$EPS1'
+if [ -x "$(command -v rbenv)" ]; then RPS1='[$(ruby_prompt_info)]$EPS1'; fi
 
 # Useful plugins for Rails development with Sublime Text and other stuff
 plugins=(brew cake coffee common-aliases docker gitfast history-substring-search last-working-dir rbenv react-native sublime sudo web-search zsh-better-npm-completion zsh-nvm zsh-syntax-highlighting)
@@ -15,12 +15,15 @@ plugins=(brew cake coffee common-aliases docker gitfast history-substring-search
 #load the plugins with dependencies later
 plugins+=(yeoman)
 
+# Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
+export HOMEBREW_NO_ANALYTICS=1
+
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
-export PATH="./bin:${PATH}"
+export PATH="./bin:${PATH}:/usr/local/sbin"
 
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
