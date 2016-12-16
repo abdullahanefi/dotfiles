@@ -6,6 +6,10 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME="muse"
 # ZSH_THEME="agnoster"
 
+# Load rbenv automatically by appending
+# the following to ~/.zshrc:
+# eval "$(rbenv init -)"
+
 # Add ruby version on prompt (float right)
 if [ -x "$(command -v rbenv)" ]; then RPS1='[$(ruby_prompt_info)]$EPS1'; fi
 
@@ -38,4 +42,6 @@ eval "$(thefuck --alias)"
 
 [[ -s /usr/local/etc/profile.d/autojump.sh ]] && . /usr/local/etc/profile.d/autojump.sh
 
-#chuck_cow
+# tmuxinator configs
+export EDITOR='vim'
+source /usr/local/lib/ruby/gems/2.3.0/gems/tmuxinator-0.9.0/completion/tmuxinator.zsh
