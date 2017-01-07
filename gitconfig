@@ -11,7 +11,7 @@
 
 [core]
   pager = less -FRSX
-	editor = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w
+	editor = subl -n -w  >/dev/null 2>&1
 	excludesfile = /Users/hanefi/.gitignore_global
 
 [alias]
@@ -53,7 +53,7 @@
   mergeoptions = --no-edit
 [user]
 	email = abdullahanefi16@gmail.com
-	name = Hanefi Önaldı
+	name = hanefi onaldi
 	username = hanefi
 [filter "lfs"]
 	required = true
