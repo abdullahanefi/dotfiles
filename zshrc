@@ -53,7 +53,7 @@ unset fasd_cache
 
 # tmuxinator configs
 export EDITOR='vim'
-source /usr/local/lib/ruby/gems/2.3.0/gems/tmuxinator-0.9.0/completion/tmuxinator.zsh
+test -e "/usr/local/lib/ruby/gems/2.3.0/gems/tmuxinator-0.9.0/completion/tmuxinator.zsh" && source "/usr/local/lib/ruby/gems/2.3.0/gems/tmuxinator-0.9.0/completion/tmuxinator.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
