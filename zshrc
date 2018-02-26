@@ -6,12 +6,12 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="muse"
 ZSH_THEME="agnoster"
 
-# Load rbenv automatically by appending
-# the following to ~/.zshrc:
-eval "$(rbenv init -)"
+# # Load rbenv automatically by appending
+# # the following to ~/.zshrc:
+# eval "$(rbenv init -)"
 
-# Add ruby version on prompt (float right)
-if [ -x "$(command -v rbenv)" ]; then RPS1='[$(ruby_prompt_info)]$EPS1'; fi
+# # Add ruby version on prompt (float right)
+# if [ -x "$(command -v rbenv)" ]; then RPS1='[$(ruby_prompt_info)]$EPS1'; fi
 
 # Useful plugins for Rails development with Sublime Text and other stuff
 plugins=(
@@ -78,7 +78,7 @@ export LC_ALL=en_US.UTF-8
 # export EDITOR='vim'
 # source /usr/local/lib/ruby/gems/2.3.0/gems/tmuxinator-0.9.0/completion/tmuxinator.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
