@@ -5,23 +5,20 @@
 	],
 	"installed_packages":
 	[
-		"Advanced CSV",
 		"AdvancedNewFile",
 		"All Autocomplete",
 		"ApplySyntax",
+		"Babel",
 		"BracketHighlighter",
-		"CMake",
-		"Coffee Color Scheme",
-		"CoffeeCompile",
+		"Color Highlighter",
 		"Dockerfile Syntax Highlighting",
-		"Emmet",
-		"ERB Snippets",
 		"Git",
 		"GitGutter",
-		"JSX",
-		"MarkdownPreview",
 		"Package Control",
-		"SCSS",
-		"Vue Syntax Highlight"
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeREPL",
+		"Theme - Soda"
 	]
 }
