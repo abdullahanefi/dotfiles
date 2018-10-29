@@ -10,14 +10,18 @@
 		"All Autocomplete",
 		"ApplySyntax",
 		"BracketHighlighter",
+		"CMake",
 		"Coffee Color Scheme",
 		"CoffeeCompile",
+		"Dockerfile Syntax Highlighting",
 		"Emmet",
 		"ERB Snippets",
 		"Git",
 		"GitGutter",
 		"JSX",
+		"MarkdownPreview",
 		"Package Control",
-		"SCSS"
+		"SCSS",
+		"Vue Syntax Highlight"
 	]
 }
