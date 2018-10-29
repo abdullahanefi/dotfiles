@@ -7,6 +7,7 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 
 alias jup="cd ~/code/jupyter && source .venv/bin/activate && jupyter notebook"
+
 alias drmc="docker rm \$(docker ps -aq)"
 alias drmi="docker images | awk '\$2 == \"<none>\" { print \$3 }' | xargs docker rmi"
 alias dcbash="docker-compose exec web bash"
@@ -15,4 +16,24 @@ alias dcupb="docker-compose up -d --build"
 alias dclogs="docker-compose logs -f"
 alias dcps="docker-compose ps"
 alias dps="docker ps"
+
 alias del_sym="gfind .venv -type l -xtype l -delete"
+
+alias start_coord="pg_ctl -D citus/coordinator -o \"-p 9700\" -l coordinator_logfile start"
+alias start_worker1="pg_ctl -D citus/worker1 -o \"-p 9701\" -l worker1_logfile start"
+alias start_worker2="pg_ctl -D citus/worker2 -o \"-p 9702\" -l worker2_logfile start"
+alias start_worker3="pg_ctl -D citus/worker3 -o \"-p 9703\" -l worker3_logfile start"
+
+alias restart_coord="pg_ctl -D citus/coordinator -o \"-p 9700\" -l coordinator_logfile restart"
+alias restart_worker1="pg_ctl -D citus/worker1 -o \"-p 9701\" -l worker1_logfile restart"
+alias restart_worker2="pg_ctl -D citus/worker2 -o \"-p 9702\" -l worker2_logfile restart"
+alias restart_worker3="pg_ctl -D citus/worker3 -o \"-p 9703\" -l worker3_logfile restart"
+
+alias stop_coord="pg_ctl -D citus/coordinator -o \"-p 9700\" -l coordinator_logfile stop"
+alias stop_worker1="pg_ctl -D citus/worker1 -o \"-p 9701\" -l worker1_logfile stop"
+alias stop_worker2="pg_ctl -D citus/worker2 -o \"-p 9702\" -l worker2_logfile stop"
+alias stop_worker3="pg_ctl -D citus/worker3 -o \"-p 9703\" -l worker3_logfile stop"
+
+alias start="start_coord; start_worker1; start_worker2; start_worker3"
+alias restart="restart_coord; restart_worker1; restart_worker2; restart_worker3"
+alias stop="stop_coord; stop_worker1; stop_worker2; stop_worker3"
