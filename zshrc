@@ -82,3 +82,9 @@ export LC_ALL=en_US.UTF-8
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+
+# Installed PostGreSQL from source
+export LD_LIBRARY_PATH=/usr/local/pgsql/lib
+export PATH=/usr/local/pgsql/bin:$PATH
+export MANPATH=/usr/local/pgsql/share/man:$MANPATH
+
