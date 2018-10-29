@@ -8,18 +8,12 @@
 		"AdvancedNewFile",
 		"All Autocomplete",
 		"ApplySyntax",
-		"Babel",
 		"BracketHighlighter",
-		"Color Highlighter",
-		"Dockerfile Syntax Highlighting",
 		"Git",
 		"GitGutter",
 		"Package Control",
-		"SideBarEnhancements",
-		"SublimeCodeIntel",
-		"SublimeLinter",
-		"SublimeREPL",
-		"Theme - Soda"
 		"PostgreSQL Syntax Highlighting",
+		"SSH Config",
+		"Theme - Soda"
 	]
 }

@@ -6,18 +6,18 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="muse"
 ZSH_THEME="agnoster"
 
-# # Load rbenv automatically by appending
-# # the following to ~/.zshrc:
+# Load rbenv automatically by appending
+# the following to ~/.zshrc:
 # eval "$(rbenv init -)"
 
-# # Add ruby version on prompt (float right)
-# if [ -x "$(command -v rbenv)" ]; then RPS1='[$(ruby_prompt_info)]$EPS1'; fi
+# Add ruby version on prompt (float right)
+if [ -x "$(command -v rbenv)" ]; then
+  eval "$(rbenv init -)"
+  RPS1='[$(ruby_prompt_info)]$EPS1';
+fi
 
 # Useful plugins for Rails development with Sublime Text and other stuff
 plugins=(
-  # git-extras
-  # sudo
-  # virtualenvwrapper
   brew
   cake
   coffee
@@ -64,7 +64,10 @@ source "${ZSH}/oh-my-zsh.sh"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
-export PATH="./bin:${PATH}:/usr/local/sbin"
+export PATH="/usr/local/pgsql/bin:./bin:${PATH}:/usr/local/sbin"
+
+# Add Sphinx brew to path if it exists
+[[ -d "/usr/local/opt/sphinx-doc/bin" ]] && export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
 
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -75,15 +78,16 @@ export LC_ALL=en_US.UTF-8
 
 
 # tmuxinator configs
-# export EDITOR='vim'
+export EDITOR='subl -w'
 # source /usr/local/lib/ruby/gems/2.3.0/gems/tmuxinator-0.9.0/completion/tmuxinator.zsh
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 # Installed PostGreSQL from source
 export LD_LIBRARY_PATH=/usr/local/pgsql/lib
 export PATH=/usr/local/pgsql/bin:$PATH
 export MANPATH=/usr/local/pgsql/share/man:$MANPATH
+
+export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
