@@ -1,5 +1,4 @@
 \set QUIET 1
-\timing
 \set ON_ERROR_ROLLBACK interactive
 
 -- By default, NULL displays as an empty space. Is it actually an empty
@@ -29,7 +28,15 @@
 \set COMP_KEYWORD_CASE upper
 
 -- Make the prompts more readable
--- \set PROMPT1 '%[%033[1m%]%M %n@%/:%>%R%[%033[0m%]%# '
--- \set PROMPT2 '[more] %R > '
+\set PROMPT1 '%[%033[1m%]%M %n@%/:%>-pid%p%R%[%033[0m%]%# '
+\set PROMPT2 '[more] %R > '
 
+set client_min_messages=DEBUG1;
+set citus.log_remote_commands=ON;
+\timing
+
+-- \set add 'ALTER TABLE ONLY public.billing ADD CONSTRAINT tenant_fk FOREIGN KEY (tenant_id) REFERENCES public.tenants(tenant_id) NOT VALID;'
 \unset QUIET
+
+-- \echo 'Development queries:\n'
+-- \echo '\t\t\t:add\t\t-- add tenant_fk not valid'

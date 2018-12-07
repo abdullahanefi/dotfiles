@@ -25,6 +25,7 @@ plugins=(
   django
   docker
   fasd
+  fzf
   gem
   gitfast
   github
@@ -32,7 +33,6 @@ plugins=(
   httpie
   last-working-dir
   npm
-  nvm
   osx
   pip
   rails
@@ -45,6 +45,7 @@ plugins=(
   web-search
   yarn
   yeoman
+  zsh-autosuggestions
   zsh-better-npm-completion
   zsh-nvm
   zsh-syntax-highlighting
@@ -64,7 +65,7 @@ source "${ZSH}/oh-my-zsh.sh"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
-export PATH="/usr/local/pgsql/bin:./bin:${PATH}:/usr/local/sbin"
+export PATH="./bin:${PATH}:/usr/local/sbin"
 
 # Add Sphinx brew to path if it exists
 [[ -d "/usr/local/opt/sphinx-doc/bin" ]] && export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
@@ -81,7 +82,7 @@ export LC_ALL=en_US.UTF-8
 export EDITOR='subl -w'
 # source /usr/local/lib/ruby/gems/2.3.0/gems/tmuxinator-0.9.0/completion/tmuxinator.zsh
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -89,5 +90,11 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export LD_LIBRARY_PATH=/usr/local/pgsql/lib
 export PATH=/usr/local/pgsql/bin:$PATH
 export MANPATH=/usr/local/pgsql/share/man:$MANPATH
+export PSQL_EDITOR=/usr/bin/nano
+# export PATH="$HOME/.pgenv/bin:$HOME/.pgenv/pgsql/bin:$PATH"
 
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
+
+eval "$(pipenv --completion)"
+
+export PATH="${HOME}/bin:${PATH}"

@@ -7,13 +7,18 @@
 	[
 		"AdvancedNewFile",
 		"All Autocomplete",
-		"ApplySyntax",
 		"BracketHighlighter",
+		"Dockerfile Syntax Highlighting",
 		"Git",
 		"GitGutter",
+		"Markdown Table Formatter",
+		"MarkdownTOC",
 		"Package Control",
+		"PgSQL",
 		"PostgreSQL Syntax Highlighting",
 		"SSH Config",
+		"SublimeLinter",
+		"SublimeLinter-shellcheck",
 		"Theme - Soda"
 	]
 }
