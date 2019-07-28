@@ -45,6 +45,7 @@ plugins=(
   web-search
   yarn
   yeoman
+  zsh-autosuggestions
   zsh-better-npm-completion
   zsh-nvm
   zsh-syntax-highlighting
@@ -87,4 +88,8 @@ export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bi
 export LD_LIBRARY_PATH=/usr/local/pgsql/lib
 export PATH=/usr/local/pgsql/bin:$PATH
 export MANPATH=/usr/local/pgsql/share/man:$MANPATH
+export PSQL_EDITOR=/usr/bin/nano
+
+export PATH="${HOME}/bin:${PATH}"
+eval "$(pipenv --completion)"
 
